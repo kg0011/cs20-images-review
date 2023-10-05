@@ -4,6 +4,7 @@ float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 float sceneryX, sceneryY, sceneryWidth, sceneryHeight;
 float extraX, extraY, extraWidth, extraHeight;
 PImage backgroundPic, sceneryPic, extraPic;
+int backgroundPicWidth, backgroundPicHeight, sceneryPicWidth, sceneryPicHeight, extraPicWidth, extraPicHeight;
 Boolean nightmode, brightnessControl;  //Reminder: both are using tint()
 int brightnessNumber=128;  //Range is from  1-255
 //
@@ -30,14 +31,36 @@ void setup()
   extraWidth = appWidth*1/8;
   extraHeight = appHeight*1/3;
   //
-  backgroundPic = loadImage(""); //put '.../Images used/Screenshot.png' if no other image is picked
-  sceneryPic = loadImage(".../Images used/Screenshot.png");
-  extraPic = loadImage(""); //put '.../Images used/Screenshot.png' if no other image is picked
+  backgroundPic = loadImage(""); //put '/Images used/Screenshot.png' if no other image is picked
+  sceneryPic = loadImage("Scenery.jpeg");  //put in a folder later if it works
+  extraPic = loadImage(""); //put '/Images used/Screenshot.png' if no other image is picked
+  //
+  backgroundPicWidth = 915;
+  backgroundPicHeight = 516;
+  sceneryPicWidth = 915;
+  sceneryPicHeight = 516;
+  extraPicWidth = 915;
+  extraPicHeight = 516;
   //
   //DIVs as rect()s
   rect(backgroundX, backgroundY, backgroundWidth, backgroundHeight);
   rect(sceneryX, sceneryY, sceneryWidth, sceneryHeight); //Landscape geometry
   rect(extraX, extraY, extraWidth, extraHeight); //Try using portrait geometry
+  //
+  //Aspect ratio calculations
+  float aspectRatio=0.0;
+  int picWidth, picHeight, rectWidth, rectHeight;
+  picWidth = ;
+  picHeight = ;
+  rectWidth = ;
+  rectHeight = ;
+  if ( picWidth >= picHeight ) { //Landscape or square
+    aspectRatio = picHeight / picWidth; //Caution: Int to float casting
+    
+  } else { //portrait
+    aspectRatio = picWidth / picHeight; //Caution: Int to float casting
+  }
+  //if ( rectWidth >= rectHeight ) {} else {}
   //
 } //end setup
 //
