@@ -56,7 +56,13 @@ void setup()
   rectHeight = ;
   if ( picWidth >= picHeight ) { //Landscape or square
     aspectRatio = picHeight / picWidth; //Caution: Int to float casting
-    
+    picWidth = rectWidth; //on a 1:1 ratio
+    picHeight = aspectRatio * rectWidth; //Aspect ratio, rewrite smaller dimension
+    //Error check
+    if ( picHeight > rectHeight ) {
+      println("problem");
+    }
+    return picHeight;
   } else { //portrait
     aspectRatio = picWidth / picHeight; //Caution: Int to float casting
   }
