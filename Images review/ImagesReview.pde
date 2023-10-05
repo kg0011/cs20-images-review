@@ -65,6 +65,13 @@ void setup()
     return picHeight;
   } else { //portrait
     aspectRatio = picWidth / picHeight; //Caution: Int to float casting
+    picHeight = rectHeight; //on a 1:1 ratio
+    picWidth = aspectRatio * rectHeight; //Aspect ratio, rewrite smaller dimension
+    //Error check
+    if ( picWidth > rectWidth ) {
+      println("problem");
+  }
+  return picWidth;
   }
   //if ( rectWidth >= rectHeight ) {} else {}
   //
