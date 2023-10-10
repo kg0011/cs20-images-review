@@ -35,12 +35,12 @@ void setup()
   sceneryPic = loadImage("Scenery.jpeg");  //put in a folder later if it works
   extraPic = loadImage(""); //put '/Images used/Screenshot.png' if no other image is picked
   //
-  backgroundPicWidth = 915;
-  backgroundPicHeight = 516;
+  backgroundPicWidth = ;
+  backgroundPicHeight = ;
   sceneryPicWidth = 915;
   sceneryPicHeight = 516;
-  extraPicWidth = 915;
-  extraPicHeight = 516;
+  extraPicWidth = ;
+  extraPicHeight = ;
   //
   //DIVs as rect()s
   rect(backgroundX, backgroundY, backgroundWidth, backgroundHeight);
@@ -50,6 +50,13 @@ void setup()
   //Aspect ratio calculations
   float aspectRatio=0.0;
   int picWidth, picHeight, rectWidth, rectHeight;
+  if ( imageWidth >= imageHeight ) { //Landscape or square
+  } else {
+    aspectRatio = float(imageWidth) / float(imageHeight); //Casting floats
+    rectHeight = imageHeight; //1:1 ratio
+    rectWidth = aspectRatio * imageWidth;
+  } //End if
+  //
   picWidth = ;
   picHeight = ;
   rectWidth = ;
