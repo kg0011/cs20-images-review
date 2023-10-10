@@ -54,7 +54,7 @@ void setup()
   } else {
     aspectRatio = float(imageWidth) / float(imageHeight); //Casting floats
     rectHeight = imageHeight; //1:1 ratio
-    rectWidth = aspectRatio * imageWidth;
+    rectWidth = aspectRatio * float(imageWidth);
   } //End if
   //
   picWidth = ;
